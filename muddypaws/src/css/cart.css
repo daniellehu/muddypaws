@@ -1,0 +1,96 @@
+.container {
+	display: flex;
+	height: 1000px;
+	margin: 50px 0;
+}
+
+.container > div:first-child {
+	flex: 1;
+}
+
+.container > div {
+	flex: 1;
+}
+
+.item {
+	display: flex;
+	margin: 50px 0;
+	padding: 20px 50px;
+}
+
+.img {
+	flex: 1;
+	text-align: center;
+	margin-right: 50px;
+}
+
+.item-number {
+	font-size: 1.5em;
+	padding-top: 40px;
+}
+
+.text {
+	flex: 2;
+}
+
+.text-header, .text-footer {
+	display: flex;
+}
+
+.item-name {
+	font-weight: 600;
+	font-size: 1.5em;
+	margin: 0;
+	flex: 1;
+}
+
+.item-price {
+	flex: 1;
+	margin: 0;
+}
+
+.item-description {
+	margin: 20px 0;
+}
+
+.img > img {
+	height: 150px;
+}
+
+.remove {
+	flex: 1;
+	color: #999;
+	font-size: 0.9em;
+}
+.remove:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+.summary {
+	padding: 0 50px;
+	border: 1px solid #000;
+	height: 700px;
+}
+
+.costs-item {
+	display: flex;
+}
+
+.costs-item > p {
+	flex: 1;
+}
+
+.total {
+	font-weight: 600;
+	font-size: 1.5em;
+	position: fixed;
+	top: 680px;
+	right: 100px;
+}
+
+.checkout {
+	position: fixed;
+	top: 700px;
+	right: 100px;
+}

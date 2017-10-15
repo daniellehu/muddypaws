@@ -1,0 +1,102 @@
+.container {
+	display: flex;
+	height: 1000px;
+	margin: 20px 0;
+}
+
+.container > div {
+	flex: 1;
+}
+
+.item-img {
+	text-align: center;
+}
+
+.item-img img {
+	height: 500px;
+}
+
+.item-info {
+	
+	padding-right: 200px;
+}
+
+.option {
+	display: flex;
+}
+
+.select {
+	flex: 1;
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #000;
+}
+
+.select:hover {
+	background-color: #000;
+	color: #fff;
+	border: 1px solid #000;
+}
+
+.select-size {
+	height: 90px;
+	margin: 5px;
+}
+
+.select-color {
+	height: 50px;
+	margin: 5px;
+	flex: 1;
+	font-size: 0.5em;
+	border: 3px solid #fff;
+}
+
+.select-color:hover {
+	border: 3px solid #000;
+}
+
+.select:hover {
+	background-color: #000;
+	color: #fff;
+	border: 1px solid #000;
+}
+
+.selected {
+	background-color: #000;
+	color: #fff;
+	border: 1px solid #000;
+}
+
+.outlined {
+	border: 3px solid #000;
+}
+
+#strawberry {
+	background-color: #E85858;
+	color: #E85858;
+}
+
+#blackberry {
+	background-color: #111;
+	color: #111;
+}
+
+#crazyberry {
+	background-color: #D649EA;
+	color: #D649EA;
+}
+
+#camouflage {
+	background-color: #255B2F;
+	color: #255B2F;
+}
+
+#night_moon {
+	background-color: #4080DD;
+	color: #4080DD;
+}
+
+#fire_orange {
+	background-color: #FFA52E;
+	color: #FFA52E;
+}

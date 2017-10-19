@@ -9,15 +9,16 @@ const getId = function(s) {
     return s.replace(" ", "_").toLowerCase();
 };
 
-const generateOptions = function(options, outlinedOption, type) {
+const generateOptions = function(options, selected, type, selectOption) {
     return options.map((option) => {
-        const isOutlined = (outlinedOption === getId(option));
+        const isSelected = (selected === getId(option));
         return <Option 
                 option={option}
-                isOutline={isOutlined}
+                isSelected={isSelected}
                 id = {getId(option)}
                 key = {option}
                 type={type}
+                selectOption={selectOption}
                />
     });
 };
@@ -25,9 +26,12 @@ const generateOptions = function(options, outlinedOption, type) {
 const Options = function(props) {
     return (
         <div className="row">
-            <p>Select {props.option.charAt(0).toUpperCase()}:</p>
+            <p>Select {props.option.charAt(0).toUpperCase() + props.option.slice(1,)}:</p>
             <div className="option" id={props.option}>
-                {generateOptions(props.options)}
+                {generateOptions(props.options, 
+                                 props.selected, 
+                                 props.option, 
+                                 props.selectOption)}
             </div>
         </div>
     );

@@ -57,6 +57,74 @@ class App extends Component {
     });
   }
 
+  goToStore() {
+    this.setState({
+        site: this.state.sites[1],
+        siteIndex: 1,
+    });
+  }
+
+
+  addQtyToItem(index) {
+    const items = this.state.shoppingCart;
+    items[index].quantity += 1;
+    this.forceUpdate();
+    this.setState({ 
+      shoppingCartTotal: this.state.shoppingCartTotal + 1,
+      addedItemNotification: true,
+    });
+    var self = this;
+    self.notifyAddedItem(self);
+  }
+
+  addToShoppingCart(item) {
+    this.setState({
+      shoppingCart: [...this.state.shoppingCart, item],
+      shoppingCartTotal: this.state.shoppingCartTotal + 1,
+      addedItemNotification: true,
+    });
+    var self = this;
+    self.notifyAddedItem(self);
+  }
+
+  notifyAddedItem(self) {
+    setTimeout(function() {
+      self.setState({
+        addedItemNotification: false,
+      });  
+    }, 2000);
+  }
+
+  removeItem(e) {
+    const itemId = e.target.id.split('-')[1];
+    const items = this.state.shoppingCart;
+    const qty = items[itemId].quantity;
+    items.splice(itemId, 1);
+    this.setState({
+      shoppingCart: items,
+      shoppingCartTotal: this.state.shoppingCartTotal - qty,
+    });
+  }
+
+  changeQuantity(e) {
+    if (e.key === 'Enter') {
+      const currentValue = e.target.value;
+      const currentQty = parseInt(currentValue, 10);
+      if (currentQty && currentQty > 0 && currentQty < 999) {
+        const itemId = e.target.id.split('-')[1];
+        const prevQty = this.state.shoppingCart[itemId].quantity;
+        const items = this.state.shoppingCart;
+        items[itemId].quantity = currentQty;
+        this.forceUpdate();
+        this.setState({
+          shoppingCartTotal: this.state.shoppingCartTotal - prevQty + currentQty,
+        });
+      } else if (currentQty === 0) {
+        this.removeItem(e);
+      }
+    }
+  }
+
   render() {
 
     if (this.state.site === "home") {
@@ -91,7 +159,15 @@ class App extends Component {
        <div>
          <Header
           goHome={this.resetSite.bind(this)} 
-          goShoppingCart={this.goToShoppingSite.bind(this)} 
+          goShoppingCart={this.goToShoppingSite.bind(this)}
+          shoppingCartTotal={this.state.shoppingCartTotal}
+          addedItemNotification={this.state.addedItemNotification}
+         />
+         <Cart 
+          shoppingCart={this.state.shoppingCart}
+          goToStore={this.goToStore.bind(this)}
+          changeQuantity={this.changeQuantity.bind(this)}
+          removeItem={this.removeItem.bind(this)}
          />
        </div>)
     }

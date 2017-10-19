@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import Item from './components/Item';
+import Cart from './components/Cart';
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +14,8 @@ class App extends Component {
       site: "home",
       siteIndex: 0,
       selectedItem: null,
+      shoppingCart: [],
+      shoppingCartTotal: 0,
     };
   }
 

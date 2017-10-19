@@ -117,7 +117,7 @@ a:hover {
 	padding: 15px;
 }
 
-.addNotificationArrow {
+.headerArrow {
     width: 0;
     height: 0;
     border-style: solid;
@@ -126,4 +126,27 @@ a:hover {
     position: fixed;
     top: 70px;
     right: 63px;
+}
+
+.invis {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 300px;
+	width: 300px;
+}
+
+.cartPreview {
+	position: fixed;
+    top: 80px;
+    right: 10px;
+    background-color: rgb(128, 203, 196);
+    color: white;
+	padding: 10px;
+	max-height: 500px;
+	overflow: auto;
+}
+
+.cartButton {
+	z-index: 1;
 }

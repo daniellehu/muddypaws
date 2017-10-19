@@ -4,7 +4,6 @@ import CartItem from './CartItem';
 
 import cart from '../img/shopping-cart.svg';
 import '../css/common.css';
-import constants from '../items/constants';
 
 const beautify = function(s) {
     s = s.replace("_", " ");

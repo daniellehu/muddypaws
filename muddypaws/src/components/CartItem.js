@@ -7,6 +7,32 @@ import constants from '../items/constants';
 
 const CartItem = function(props) {
 
+    if (props.cartPreview) {
+        return (
+            <div className="item-preview">
+                <h3 className="item-number">{props.itemNumber}</h3>
+                <div className="img-preview">
+                    <img src={constants.items[props.itemId].img} 
+                        alt={constants.items[props.itemId].item} />
+                </div>
+                <div className="text">
+                    <div className="text-header">
+                        <p className="item-name">{constants.items[props.itemId].item}</p>
+                        <p className="item-price">${constants.items[props.itemId].price}</p>
+                    </div>
+                    <p className="item-description">
+                    Type: {props.type}<br />
+                    Size: {props.size}<br />
+                    Color: {props.color}<br />
+                    </p>
+                    <div className="text-footer">
+                        <p className="quantity">Qty: {props.quantity}</p>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
     return (
     <div className="item">
         <h3 className="item-number">{props.itemNumber}</h3>

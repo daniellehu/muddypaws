@@ -16,6 +16,7 @@ class App extends Component {
       selectedItem: null,
       shoppingCart: [],
       shoppingCartTotal: 0,
+      showCartPreview: false,
     };
   }
 
@@ -125,6 +126,18 @@ class App extends Component {
     }
   }
 
+  previewCart(e) {
+    this.setState({
+      showCartPreview: true,
+    });
+  }
+
+  unpreviewCart(e) {
+    this.setState({
+      showCartPreview: false,
+    });
+  }
+
   render() {
 
     if (this.state.site === "home") {
@@ -137,6 +150,10 @@ class App extends Component {
               goShoppingCart={this.goToShoppingSite.bind(this)}
               shoppingCartTotal={this.state.shoppingCartTotal}
               addedItemNotification={this.state.addedItemNotification}
+              previewCart={this.previewCart.bind(this)}
+              unpreviewCart={this.unpreviewCart.bind(this)}
+              showCartPreview={this.state.showCartPreview}
+              shoppingCart={this.state.shoppingCart}
             />
           	<Shop 
               selectItem={this.goToItem.bind(this)}
@@ -151,6 +168,10 @@ class App extends Component {
             goShoppingCart={this.goToShoppingSite.bind(this)}
             shoppingCartTotal={this.state.shoppingCartTotal}
             addedItemNotification={this.state.addedItemNotification}
+            previewCart={this.previewCart.bind(this)}
+            unpreviewCart={this.unpreviewCart.bind(this)}
+            showCartPreview={this.state.showCartPreview}
+            shoppingCart={this.state.shoppingCart}
           />
           <Item 
             itemId={this.state.selectedItem}
@@ -169,6 +190,10 @@ class App extends Component {
           goShoppingCart={this.goToShoppingSite.bind(this)}
           shoppingCartTotal={this.state.shoppingCartTotal}
           addedItemNotification={this.state.addedItemNotification}
+          previewCart={this.previewCart.bind(this)}
+          unpreviewCart={this.unpreviewCart.bind(this)}
+          showCartPreview={this.state.showCartPreview}
+          shoppingCart={this.state.shoppingCart}
          />
          <Cart 
           shoppingCart={this.state.shoppingCart}

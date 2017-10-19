@@ -49,7 +49,7 @@ const generateCosts = function(shoppingCart) {
         const color = beautify(item.color);
         
         return (
-        <div className="costs-item" id={indexId}>
+        <div className="costs-item" id={indexId} key={indexId}>
             <p>{item.quantity} {constants.items[item.itemId].item}<br /> 
                 ({type}, {size}, {color})</p>
             <p className="right-align">${subprice}</p>

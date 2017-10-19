@@ -1,14 +1,14 @@
-.container {
+.cartContainer {
 	display: flex;
 	height: 1000px;
 	margin: 50px 0;
 }
 
-.container > div:first-child {
+.cartContainer > div:first-child {
 	flex: 1;
 }
 
-.container > div {
+.cartContainer > div {
 	flex: 1;
 }
 
@@ -73,6 +73,11 @@
 	height: 700px;
 }
 
+.shoppingCart {
+	height: 600px;
+	overflow: auto;
+}
+
 .costs-item {
 	display: flex;
 }
@@ -93,4 +98,16 @@
 	position: fixed;
 	top: 700px;
 	right: 100px;
+}
+
+.quantity {
+	flex: 1;
+}
+
+.quantityInput {
+	width: 30px;
+	margin-left: 10px;
+} 
+.quantityInput:hover {
+	opacity: 0.9;
 }

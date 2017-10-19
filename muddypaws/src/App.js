@@ -134,7 +134,9 @@ class App extends Component {
         <div>
           	<Header
               goHome={this.resetSite.bind(this)} 
-              goShoppingCart={this.goToShoppingSite.bind(this)} 
+              goShoppingCart={this.goToShoppingSite.bind(this)}
+              shoppingCartTotal={this.state.shoppingCartTotal}
+              addedItemNotification={this.state.addedItemNotification}
             />
           	<Shop 
               selectItem={this.goToItem.bind(this)}
@@ -146,10 +148,15 @@ class App extends Component {
         <div>
           <Header
             goHome={this.resetSite.bind(this)} 
-            goShoppingCart={this.goToShoppingSite.bind(this)} 
+            goShoppingCart={this.goToShoppingSite.bind(this)}
+            shoppingCartTotal={this.state.shoppingCartTotal}
+            addedItemNotification={this.state.addedItemNotification}
           />
           <Item 
             itemId={this.state.selectedItem}
+            shoppingCart={this.state.shoppingCart}
+            addQtyToItem={this.addQtyToItem.bind(this)}
+            addToShoppingCart={this.addToShoppingCart.bind(this)}
             prevSite={this.prevSite.bind(this)}
           />
         </div>

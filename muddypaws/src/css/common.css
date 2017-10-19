@@ -107,3 +107,23 @@ h2 > a:hover,  header > a:hover {
 a:hover {
     cursor: pointer;
 }
+
+.addNotification {
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    background-color: rgb(128, 203, 196);
+    color: white;
+	padding: 15px;
+}
+
+.addNotificationArrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #80cbc4 transparent;
+    position: fixed;
+    top: 70px;
+    right: 63px;
+}
